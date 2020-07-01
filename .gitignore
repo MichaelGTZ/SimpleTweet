@@ -64,4 +64,5 @@ local.properties
 build
 import-summary.txt
 
+# API keys
 apikey.properties
