@@ -56,6 +56,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
         android:text="TextView"
+        android:autoLink="all"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
         app:layout_constraintTop_toBottomOf="@id/tvScreenName"
