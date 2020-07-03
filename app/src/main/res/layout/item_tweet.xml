@@ -23,6 +23,7 @@
         android:layout_marginEnd="5dp"
         android:text="TextView"
         android:textStyle="bold"
+        android:textColor="#ff000000"
         app:layout_constraintEnd_toStartOf="@+id/tvScreenName"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +52,7 @@
 
     <TextView
         android:id="@+id/tvBody"
+        android:textColor="#ff000000"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -65,14 +67,54 @@
     <ImageView
         android:id="@+id/ivMedia"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ivReply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/ivProfileImage"
         app:layout_constraintTop_toBottomOf="@+id/tvBody"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/ivReply"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
+        app:layout_constraintTop_toBottomOf="@id/ivMedia"
+        app:srcCompat="@drawable/vector_compose_dm_fab"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/ivRetweet"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivLike"
+        app:layout_constraintStart_toEndOf="@+id/ivReply"
+        app:layout_constraintTop_toBottomOf="@id/ivMedia"
+        app:srcCompat="@drawable/ic_vector_retweet_stroke"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/ivLike"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivMedia"
+        app:srcCompat="@drawable/ic_vector_heart_stroke"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/ivReply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#A9A9A9"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
