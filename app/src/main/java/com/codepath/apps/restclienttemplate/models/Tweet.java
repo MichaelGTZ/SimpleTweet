@@ -22,6 +22,10 @@ public class Tweet {
     public User user;
     public String mediaURL;
     public long id;
+    // Not yet implemented
+    // public int favoriteCount;
+    // public int retweetCount;
+    // public int replyCount;
 
     // Empty constructor needed for Parceler Library
     public Tweet() {}
@@ -65,6 +69,8 @@ public class Tweet {
         } catch (ParseException e) {
             Log.e("RelativeTimeAgo", "getRelativeTimeAgo: failed", e);
         }
-        return relativeDate;
+        String[] relativeDateBySpace = relativeDate.split(" ");
+        String relativeDateAbbrev = relativeDateBySpace[0] + relativeDateBySpace[1].charAt(0);
+        return relativeDateAbbrev;
     }
 }
