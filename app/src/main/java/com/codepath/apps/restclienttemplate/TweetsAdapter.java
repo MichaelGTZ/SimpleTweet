@@ -11,9 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder> {
 
@@ -85,11 +89,11 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvScreenName.setText(tweet.user.screenName);
             tvBody.setText(tweet.body);
             tvTimestamp.setText(tweet.getRelativeTimeAgo(tweet.createdAt));
-            Glide.with(context).load(tweet.user.profileImageURL).into(ivProfileImage);
+            Glide.with(context).load(tweet.user.profileImageURL).transform(new CircleCrop()).into(ivProfileImage);
             if (tweet.mediaURL == null) {
                 ivMedia.setVisibility(View.GONE);
             } else {
-                Glide.with(context).load(tweet.mediaURL).into(ivMedia);
+                Glide.with(context).load(tweet.mediaURL).transform(new RoundedCornersTransformation(25,0)).into(ivMedia);
                 ivMedia.setVisibility(View.VISIBLE);
             }
 
